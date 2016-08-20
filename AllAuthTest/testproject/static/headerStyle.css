@@ -1,0 +1,76 @@
+.img {
+    position: relative;
+    width: 100%;
+
+}
+
+.headerTXT1 {
+    position: absolute;
+    margin: auto;
+    top: 400px;
+    left:0;
+    right:0;
+    bottom:0;
+    text-align:center;
+}
+
+.headerTXT2 {
+    position: absolute;
+    margin: auto;
+    top: 0px;
+    right: 2%;
+
+}
+
+.headerIMG {
+    position: absolute;
+    margin: auto;
+    top: 0%;
+    left: 0%;
+    max-width: 15%;
+
+}
+
+
+body {
+    padding-top:500px;
+}
+
+header,.main-nav-scrolled {
+    position: fixed;
+    top: 0;
+    width:100%;
+}
+
+
+.main-nav, main {
+    text-align:center;
+    background-color:white;
+    position:relative;
+}
+
+.main-nav {
+    z-index:150;
+    box-shadow: 0 2px 3px rgba(0,0,0, .4);
+}
+
+.menu {
+    color: black;
+    font-size: 20px;
+
+}
+
+.menu:hover {
+    color: black;
+}
+
+#navWrap {
+    height: 30px;
+}
+
+
+.image {
+    display: block;
+  margin: 0 auto;
+
+}

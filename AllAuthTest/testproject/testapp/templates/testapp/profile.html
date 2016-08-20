@@ -1,0 +1,78 @@
+{% extends "account/base.html" %}
+{% load staticfiles %}
+
+
+{% block head_title %}Profile_Page{% endblock %}
+
+
+{% block profile %}
+        {% if user.is_authenticated %}
+<!--            <h1>Hi, {{ user.username }}! </h1>
+            <a href="{% url 'account_logout' %}">Click here to log out</a>
+            <!--<img src="{% static 'vibely.jpg' %}" alt="vibely">-->
+
+            <!-- BX SLIDER -->
+            <div class="slide-contain">
+            <ul class="bxslider" style="background-color: white;">
+                <li><img class="image" src="{% static 'artistImages/haken.jpg' %}" title="Haken" /></li>
+                <li><img class="image" src="{% static 'artistImages/kanye.png' %}" title="Kanye West" /></li>
+                <li><img class="image" src="{% static 'artistImages/artistphoto.jpg' %}" title="Artist" /></li>
+                <li><img class="image" src="{% static 'artistImages/dream-theater.jpg' %}" title="Dream Theater" /></li>
+
+            </ul>
+            </div>
+
+            <div>
+              <div class="col-md-6" style="background-color:rgb(30,32,36); z-index:200;">
+                <h1>Abridged how it works</h1>
+                    <p>Vibely crowdsources geo data and funding to provide artists with accurate revenue projections as well as the most profitable tour within a given period of time.
+                    </p>
+              </div>
+                <div class="col-md-6" style="background-color:rgb(30,32,36); z-index:200;">
+                <h1>Abridged Why Vibely</h1>
+                    <p>Vibely has the potential to revolutionize the live music industry so that it works in everyone's best interest. It will provide a host of benefits to every corner of the industry.
+                    </p>
+              </div>
+            </div>
+
+            <div style="z-index:150;">
+                <h1 style="text-align:center;">Stay in the loop on your favorite artists!</h1>
+                <h2 class="col-md-4" style="text-align:center;">
+                    <a href="#">Facebook</a><br/>
+                    <a href="#">Instagram</a><br/>
+                    <a href="#">Twitter</a><br/>
+                </h2>
+                <h2 class="col-md-4" style="text-align:center;">
+                    or
+                </h2>
+                <h2 class="col-md-4" style="text-align:center;">
+                    Contact us at<br/>
+                    email, Linkedin, phone<br/>
+                </h2>
+            </div>
+
+
+        {% else %}
+            <h1>{{ message }}</h1>
+            <a href="{% url 'account_login' %}">Click here to sign in/up</a>
+        {% endif %}
+
+
+
+
+                   <!-- jQuery library (served from Google) -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+        <!-- bxSlider Javascript file -->
+        <script src="{% static 'jquery.bxslider/jquery.bxslider.min.js' %}"></script>
+        <script>
+            $(document).ready(function(){
+                $('.bxslider').bxSlider({
+                auto: true,
+
+                mode: 'fade',
+                pager: false
+                });
+            });
+        </script>
+{% endblock %}

@@ -1,0 +1,93 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <!-- bxSlider CSS file -->
+    <link href="{% static 'jquery.bxslider/jquery.bxslider.css' %}" rel="stylesheet" />
+    <link href="{% static 'headerStyle.css' %}" rel="stylesheet" />
+    <script src="{% static 'jquery-2.2.1.js' %}"></script>
+      <script type="text/javascript" src="{% static 'scroll.js' %}"></script>
+    <title>{% block head_title %}{% endblock %}</title>
+    {% block extra_head %}
+    {% endblock %}
+  </head>
+  <body>
+
+  <header>
+  <div class="img">
+      <img src="{% static 'concert.jpg' %}" style="width: 100%" />
+      <h2 class="headerTXT1"><a href="#">Sign up</a> to bring your favorite artist to you!</h2>
+
+      <div class="headerTXT2">
+        <h4>Already have an account?<a href="#">  Sign In</a></h4>
+      </div>
+
+      <img class="headerIMG" src="{% static 'vibely-logo.png' %}"/>
+  </div>
+  </header>
+
+  <div class="main">
+     <div id="navWrap">
+      <nav class="main-nav">
+         <a href="#" class="menu">Browse Tours</a> |
+         <a href="#" class="menu">My Profile</a>
+         <a href="#"><img src="{% static 'vibelyLogo.jpg' %}" style="max-width:70px; max-height:70px"/></a>
+         <a href="#" class="menu">About Vibely</a> |
+         <a href="#" class="menu">Contact Us</a>
+     </nav>
+    </div>
+
+
+  {% block body %}
+
+    {% if messages %}
+    <div>
+      <strong>Messages:</strong>
+      <ul>
+	{% for message in messages %}
+	<li>{{message}}</li>
+	{% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+
+    <!--<div>-->
+      <!--<strong>Menu:</strong>-->
+      <!--<ul>-->
+	<!--{% if user.is_authenticated %}-->
+	<!--<li><a href="{% url 'account_email' %}">Change E-mail</a></li>-->
+	<!--<li><a href="{% url 'account_logout' %}">Sign Out</a></li>-->
+	<!--{% else %}-->
+	<!--<li><a href="{% url 'account_login' %}">Sign In</a></li>-->
+	<!--<li><a href="{% url 'account_signup' %}">Sign Up</a></li>-->
+	<!--{% endif %}-->
+      <!--</ul>-->
+    <!--</div>-->
+    {% block content %}
+    {% block profile %}
+    {% endblock %}
+    {% endblock %}
+    {% endblock %}
+    {% block extra_body %}
+    {% endblock %}
+  </div>
+
+
+
+  <!--<script>-->
+      <!--var mn = $(".main-nav");-->
+    <!--jQuery(document).ready(function(){-->
+    <!--$(window).scroll(function(){-->
+        <!--if($(this).scrollTop() > 500) {-->
+            <!--mn.addClass("main-nav-scrolled");-->
+        <!--}-->
+        <!--else {-->
+            <!--mn.removeClass("main-nav-scrolled");-->
+        <!--}-->
+<!--})});-->
+  <!--</script>-->
+  </body>
+</html>

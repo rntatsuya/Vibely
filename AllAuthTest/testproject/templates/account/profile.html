@@ -1,0 +1,18 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello, World!</title>
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    </head>
+    <body>
+
+        {% if user.is_authenticated %}
+            <h1>Hi, {{ user.username }}! </h1>
+        {% else %}
+            <h1>{{ message }}</h1>
+        {% endif %}
+        <script src="{% static 'jquery-2.2.1.js' %}"></script>
+    </body>
+</html>
